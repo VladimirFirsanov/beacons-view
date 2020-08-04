@@ -1,0 +1,18 @@
+
+<div class="main">
+    <div class="header" fxLayoutAlign="start">
+        <div class="logo" [routerLink]="['/']">
+            <span>App Title</span>
+        </div>
+    </div>
+    <div class="inner-content" fxFill fxLayoutAlign="space-around start" fxLayoutGap="50px">
+        <div fxLayout="column" fxFill fxFlex="35%" fxLayoutGap="50px">
+            <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput [formControl]="filterCtrl">
+            </mat-form-field>
+            <app-table [data]="dataService.filteredData" ></app-table>
+        </div>
+        <app-chart [chartData]="dataService.filteredData" fxFill fxFlex="65%"></app-chart>
+    </div>
+</div>
