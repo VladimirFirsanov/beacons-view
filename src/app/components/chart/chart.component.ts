@@ -23,20 +23,20 @@ export class ChartComponent implements OnInit, OnDestroy {
     }
     @Input() set chartData(data: Beacon[]) {
         if (data && this.chart) {
-            this.chart.data.datasets = this.chartService.convertData(data);
-            this.chart.options.tooltips = this.chartService.getTooltips(data);
+            this.chart.data.datasets = this._chartService.convertData(data);
+            this.chart.options.tooltips = this._chartService.getTooltips(data);
             this.chart.update();
         }
     }
 
     public chart: Chart;
 
-    constructor(private chartService: ChartService) {
+    constructor(private _chartService: ChartService) {
     }
 
     public ngOnInit(): void {
         const chartContext = this.canvas.nativeElement.getContext('2d');
-        this.chart = new Chart(chartContext, this.chartService.getOptions());
+        this.chart = new Chart(chartContext, this._chartService.getOptions());
     }
 
     public ngOnDestroy(): void {
