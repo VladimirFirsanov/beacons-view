@@ -10,15 +10,15 @@
 .main {
     min-height: 100vh;
     padding: 40px;
-    background-color: rgb(233, 237, 245);
+    background-color: rgb(255, 201, 71, 0.5);
     box-sizing: border-box;
     .header {
         .logo {
             span {
                 @extend %text-format;
-                font-size: 30px;
-                line-height: 36px;
-                color: rgb(63, 81, 181);
+                font-size: 32px;
+                line-height: 40px;
+                color: rgb(255, 152, 0);
             }
             &:hover {
                 cursor: pointer;
